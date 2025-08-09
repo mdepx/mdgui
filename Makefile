@@ -1,15 +1,15 @@
 IMGUI_DIR = ./imgui
 
-MORELLO_FLAGS=
-PREFIX=/usr/local
-WIDTH=1080
-HEIGHT=1240
+MORELLO_FLAGS =
+PREFIX = /usr/local
+WIDTH = 1080
+HEIGHT = 1240
 
 # Uncomment for ARM Morello
-# MORELLO_FLAGS=-march=morello+noa64c -Xclang -morello-vararg=new -mabi=aapcs
-# PREFIX=/usr/local64
-# WIDTH=1920
-# HEIGHT=1080
+# MORELLO_FLAGS = -march=morello+noa64c -Xclang -morello-vararg=new -mabi=aapcs
+# PREFIX = /usr/local64
+# WIDTH = 1920
+# HEIGHT = 1080
 
 CFLAGS = -I${PREFIX}/include/libdrm -I${PREFIX}/include
 CFLAGS += -I$(IMGUI_DIR) -I$(IMGUI_DIR)/backends
@@ -19,7 +19,7 @@ CFLAGS += ${MORELLO_FLAGS}
 
 LDFLAGS = -L${PREFIX}/lib -lEGL -lgbm -ldrm -lm -lOpenGL -linput -ludev
 
-EXEC=mdgui
+EXEC = mdgui
 
 OBJS = mdgui.o input.o drmgl.o
 
