@@ -17,7 +17,7 @@ CFLAGS += -DDISPLAY_WIDTH=${WIDTH} -DDISPLAY_HEIGHT=${HEIGHT}
 CFLAGS += -Wall -Wformat
 CFLAGS += ${MORELLO_FLAGS}
 
-LDFLAGS = -L${PREFIX}/lib -lEGL -lgbm -ldrm -lm -lOpenGL -linput -ludev
+LDFLAGS = -L${PREFIX}/lib -lEGL -lgbm -ldrm -lOpenGL -linput -ludev
 
 EXEC = mdgui
 
