@@ -1,4 +1,4 @@
-IMGUI_DIR = /home/br/imgui
+IMGUI_DIR = ./imgui
 
 MORELLO_FLAGS=
 PREFIX=/usr/local
