@@ -45,7 +45,6 @@ all:	$(EXEC)
 ${EXEC}: ${IMGUI_OBJS} ${OBJS}
 	c++ -g -o mdgui ${OBJS} ${IMGUI_OBJS} ${LDFLAGS} ${MORELLO_FLAGS}
 	strip mdgui
-	scp mdgui 10.0.0.1:~/kmscube
 
 clean:
 	@rm -f ${EXEC} ${OBJS} ${IMGUI_OBJS}
