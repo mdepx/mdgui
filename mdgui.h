@@ -7,7 +7,8 @@ int mdgui_render(int i);
 
 int input_init(void);
 int input_poll_once(void);
-bool main_process_event(int type, double x, double y);
+
+bool mdgui_input_event(int type, double x, double y);
 
 #ifdef __cplusplus
 }

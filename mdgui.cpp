@@ -115,7 +115,7 @@ mdgui_render(int i)
 }
 
 int
-main_clean(void)
+mdgui_clean(void)
 {
 
 	ImGui_ImplOpenGL3_Shutdown();
@@ -125,7 +125,7 @@ main_clean(void)
 }
 
 bool
-main_process_event(int type, double x, double y)
+mdgui_input_event(int type, double x, double y)
 {
 	ImGuiIO& io = ImGui::GetIO();
 
