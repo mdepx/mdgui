@@ -55,34 +55,34 @@ process_event(struct libinput_event *event)
 		x += libinput_event_pointer_get_dx(pointer_event);
 		y += libinput_event_pointer_get_dy(pointer_event);
 		dprintf("pointer motion event: %d %d\n", (int)x, (int)y);
-		main_process_event(2, x, y);
+		mdgui_input_event(2, x, y);
 		break;
 	case LIBINPUT_EVENT_POINTER_BUTTON:
 		pointer_event = libinput_event_get_pointer_event(event);
 		dprintf("pointer button event\n");
 		state = libinput_event_pointer_get_button_state(pointer_event);
 		if (state == LIBINPUT_BUTTON_STATE_PRESSED)
-			main_process_event(1, x, y);
+			mdgui_input_event(1, x, y);
 		else
-			main_process_event(3, 0, 0);
+			mdgui_input_event(3, 0, 0);
 		break;
 	case LIBINPUT_EVENT_TOUCH_DOWN:
 		touch_event = libinput_event_get_touch_event(event);
 		x = libinput_event_touch_get_x(touch_event);
 		y = libinput_event_touch_get_y(touch_event);
 		dprintf("press down %f %f\n", x, y);
-		main_process_event(1, x, y);
+		mdgui_input_event(1, x, y);
 		break;
 	case LIBINPUT_EVENT_TOUCH_UP:
 		dprintf("press up\n");
-		main_process_event(3, 0, 0);
+		mdgui_input_event(3, 0, 0);
 		break;
 	case LIBINPUT_EVENT_TOUCH_MOTION:
 		touch_event = libinput_event_get_touch_event(event);
 		x = libinput_event_touch_get_x(touch_event);
 		y = libinput_event_touch_get_y(touch_event);
 		dprintf("motion %f %f\n", x, y);
-		main_process_event(2, x, y);
+		mdgui_input_event(2, x, y);
 		break;
 	case LIBINPUT_EVENT_TOUCH_CANCEL:
 	case LIBINPUT_EVENT_TOUCH_FRAME:
